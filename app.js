@@ -15,8 +15,8 @@ app.get('/endpoint', (req, res) => {
   const utcTime = new Date(now.getTime() + (now.getTimezoneOffset() - 120) * 60000).toISOString();
 
   // Replace with your GitHub repository and file name
-  const githubRepoURL = "https://github.com/username/repo";
-  const githubFileURL = `${githubRepoURL}/blob/main/file_name.ext`;
+  const githubRepoURL = "https://github.com/Midesales/ZuriIntern-Backend-stageone";
+  const githubFileURL = `${githubRepoURL}/blob/master/app.js`;
 
   // Create the response JSON object
   const responseObject = {
