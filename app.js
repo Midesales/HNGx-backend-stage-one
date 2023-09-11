@@ -15,8 +15,8 @@ app.get('/api', (req, res) => {
   const utcTime = new Date(now.getTime() + (now.getTimezoneOffset() - 120) * 60000).toISOString();
 
   // Replace with your GitHub repository and file name
-  const githubRepoURL = "https://github.com/Midesales/Zuri-Backend/tree/master/stage-one";
-  const githubFileURL = `https://github.com/Midesales/Zuri-Backend/blob/master/stage-one/app.js`;
+  const githubRepoURL = "https://github.com/Midesales/Zuri-backend-stage-one";
+  const githubFileURL = `https://github.com/Midesales/Zuri-backend-stage-one/blob/master/app.js`;
 
   // Create the response JSON object
   const responseObject = {
