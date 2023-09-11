@@ -16,10 +16,12 @@ app.get('/api', (req, res) => {
   // Format the UTC time string as specified
   const formattedUtcTime = `${now.getUTCFullYear()}-${String(now.getUTCMonth() + 1).padStart(2, '0')}-${String(now.getUTCDate()).padStart(2, '0')}T${String(now.getUTCHours()).padStart(2, '0')}:${String(now.getUTCMinutes()).padStart(2, '0')}:${String(now.getUTCSeconds()).padStart(2, '0')}Z`;
 
+  
+
   // Get the current day of the week in full format
   const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
   const currentDay = daysOfWeek[now.getUTCDay()];
-
+  
   // Replace with your GitHub repository and file name
   const githubRepoURL = "https://github.com/Midesales/Zuri-backend-stage-one";
   const githubFileURL = `https://github.com/Midesales/Zuri-backend-stage-one/blob/master/app.js`;
