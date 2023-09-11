@@ -13,8 +13,7 @@ app.get('/api', (req, res) => {
   const utcTime = new Date(now.getTime() + offset);
 
   // Format the UTC time string
-  const formattedUtcTime = `${utcTime.getUTCFullYear()}-${String(utcTime.getUTCMonth() + 1).padStart(2, '0')}-${String(utcTime.getUTCDate()).padStart(2, '0')}T${String(utcTime.getUTCHours()).padStart(2, '0')}:${String(utcTime.getUTCMinutes()).padStart(2, '0')}:${String(utcTime.getUTCSeconds()).padStart(2, '0')}Z`;
-
+  const formattedUtcTime = utcTime.toISOString().slice(0, -1) + 'Z';
 
   // Get the current day of the week in full format
   const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
