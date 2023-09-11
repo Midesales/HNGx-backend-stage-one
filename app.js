@@ -3,8 +3,8 @@ const app = express();
 
 
 app.get('/api', (req, res) => {
-  const midewears02 = req.query.midewears02;
-  const track = req.query.backend;
+  const slack_name = req.query.slack_name;
+  const track = req.query.track;
 
   // Get the current day of the week in full format
   const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
@@ -12,7 +12,7 @@ app.get('/api', (req, res) => {
 
   // Get the current UTC time within a +/-2 minute window
   const now = new Date();
-  const utcTime = new Date(now.getTime() + (now.getTimezoneOffset() - 120) * 60000).toISOString();
+  const utcTime = now.toISOString();
 
   // Replace with your GitHub repository and file name
   const githubRepoURL = "https://github.com/Midesales/Zuri-backend-stage-one";
@@ -20,10 +20,10 @@ app.get('/api', (req, res) => {
 
   // Create the response JSON object
   const responseObject = {
-    slack_name: midewears02,
+    slack_name: slack_name,
     current_day: currentDay,
     utc_time: utcTime,
-    track: "Backend",
+    track: track,
     github_file_url: githubFileURL,
     github_repo_url: githubRepoURL,
     status_code: 200
