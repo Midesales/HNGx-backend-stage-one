@@ -10,17 +10,18 @@ app.get('/api', (req, res) => {
   const slack_name = req.query.slack_name;
   const track = req.query.track;
 
-  // Get the current UTC time
-  const now = new Date();
+ // Get the current UTC time
+const now = new Date();
 
-  // Calculate a random offset within +/-2 minutes in milliseconds
-  const offset = (Math.random() * 4 - 2) * 60 * 1000;
+// Calculate a random offset within +/-2 minutes in milliseconds
+const offset = (Math.random() * 4 - 2) * 60 * 1000;
 
-  // Apply the offset to the current time
-  const utcTime = new Date(now.getTime() + offset);
+// Apply the offset to the current time
+const utcTime = new Date(now.getTime() + offset);
 
-  // Format the UTC time string as specified
-  const formattedUtcTime = `${utcTime.getUTCFullYear()}-${String(utcTime.getUTCMonth() + 1).padStart(2, '0')}-${String(utcTime.getUTCDate()).padStart(2, '0')}T${String(utcTime.getUTCHours()).padStart(2, '0')}:${String(utcTime.getUTCMinutes()).padStart(2, '0')}:${String(utcTime.getUTCSeconds()).padStart(2, '0')}Z`;
+// Format the UTC time string as specified
+const formattedUtcTime = `${utcTime.getUTCFullYear()}-${String(utcTime.getUTCMonth() + 1).padStart(2, '0')}-${String(utcTime.getUTCDate()).padStart(2, '0')}T${String(utcTime.getUTCHours()).padStart(2, '0')}:${String(utcTime.getUTCMinutes()).padStart(2, '0')}:${String(utcTime.getUTCSeconds()).padStart(2, '0')}Z`;
+
 
   // Get the current day of the week in full format
   const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
