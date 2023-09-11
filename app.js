@@ -12,8 +12,7 @@ app.get('/api', (req, res) => {
 
   // Get the current UTC time within a +/-2 minute window
   const now = new Date();
-  const utcTime = now.toISOString();
-
+  const utcTime = new Date(now.getTime() + (Math.random() * 4 - 2) * 60 * 1000).toISOString();
   // Replace with your GitHub repository and file name
   const githubRepoURL = "https://github.com/Midesales/Zuri-backend-stage-one";
   const githubFileURL = `https://github.com/Midesales/Zuri-backend-stage-one/blob/master/app.js`;
